@@ -1,0 +1,25 @@
+{
+  "name": "study-apollo-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "prod": "NODE_ENV=production node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chocoshop/study-apollo-tutorial.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chocoshop/study-apollo-tutorial/issues"
+  },
+  "homepage": "https://github.com/chocoshop/study-apollo-tutorial#readme",
+  "dependencies": {
+    "apollo-server": "^3.6.7"
+  }
+}
