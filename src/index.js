@@ -4,11 +4,13 @@ const { createStore } = require("./utils");
 
 const LaunchAPI = require("./datasources/launch");
 const UserAPI = require("./datasources/user");
+const resolvers = require("./resolover");
 
 const store = createStore();
 
 const server = new ApolloServer({
     typeDefs,
+    resolvers,
     dataSources: () => ({
         launchAPI: new LaunchAPI(),
         userAPI: new UserAPI({ store }),
