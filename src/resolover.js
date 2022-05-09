@@ -71,6 +71,7 @@ module.exports = {
                         : `the following launches couldn't be booked ${launchIds.filter(
                             id => !results.includes(id)
                         )}`,
+                launches
             }
         },
         cancelTrip: async (_, { launchId }, { dataSources }) => {
