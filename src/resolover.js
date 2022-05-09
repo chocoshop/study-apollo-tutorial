@@ -59,7 +59,7 @@ module.exports = {
                 return user;
             }
         },
-        bookTrip: async (_, { launchIds }, { dataSources }) => {
+        bookTrips: async (_, { launchIds }, { dataSources }) => {
             const results = await dataSources.userAPI.bookTrip({ launchIds });
             const launches = await dataSources.launchAPI.getLaunchesByIds({launchIds});
             
