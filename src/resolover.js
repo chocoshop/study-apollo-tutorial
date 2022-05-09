@@ -87,7 +87,7 @@ module.exports = {
             const launch = dataSources.launchAPI.getLaunchById({ launchId });
             return {
                 success: true,
-                message: 'trip cancelles',
+                message: 'trip cancelled',
                 launch: [launch],
             }
         }
