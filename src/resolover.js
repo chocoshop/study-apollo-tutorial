@@ -53,15 +53,15 @@ module.exports = {
 
     Mutation: {
         login: async (_, { email }, { dataSources }) => {
-            const user = dataSources.userAPI.findOrCreateUser({ email });
+            const user = await dataSources.userAPI.findOrCreateUser({ email });
             if (user) {
-                user.token = Buffer.from(email).toString();
+                user.token = Buffer.from(email).toString('base64');
                 return user;
             }
         },
         bookTrips: async (_, { launchIds }, { dataSources }) => {
-            const results = await dataSources.userAPI.bookTrip({ launchIds });
-            const launches = await dataSources.launchAPI.getLaunchesByIds({launchIds});
+            const results = await dataSources.userAPI.bookTrips({ launchIds });
+            const launches = await dataSources.launchAPI.getLaunchesByIds({ launchIds });
             
             return {
                 success: results && results.length === launchIds.length,
