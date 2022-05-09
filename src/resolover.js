@@ -88,7 +88,7 @@ module.exports = {
             return {
                 success: true,
                 message: 'trip cancelled',
-                launch: [launch],
+                launches: [launch],
             }
         }
     }
