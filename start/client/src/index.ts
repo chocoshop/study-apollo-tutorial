@@ -10,17 +10,19 @@ const client: ApolloClient<NormalizedCacheObject> = new ApolloClient({
     uri: 'http://localhost:4000/graphql'
 });
 
+
 client
-    .query({
-        query: gql`
-        query: TestQuery {
-            launch(id: 56) {
-                id
-                mission {
-                    name
-                }
-            }
+  .query({
+    query: gql`
+      query TestQuery {
+        launch(id: 56) {
+          id
+          mission {
+            name
+            missionPatch(size: SMALL)
+          }
         }
-        `
-    })
-    .then(result => console.log(result));
+      }
+    `
+  })
+  .then(result => console.log(result));
